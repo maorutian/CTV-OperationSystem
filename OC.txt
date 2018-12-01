@@ -1,0 +1,49 @@
+#Own Submenu
+
+ echo 	'OTHER COMMANDS'
+ echo	'1 --Display the current data and time'
+ echo	'2 --Count lines, words, and characters in a specified file'
+ echo	'3 --Draw a cow and let the cow say words that you want'
+ echo	'4 -- Quit -- Return to Main Menu'
+
+read -p 'Enter your choice:' opt
+
+if [ -z "$opt" ] 
+then 
+   echo 'Please enter number'
+   ./OC.txt
+elif [ $opt = 1 ]
+then
+   date '+%A %W %Y %X'
+   read -p 'Press a key to continue' 
+   clear
+   ./OC.txt
+elif [ $opt = 2 ]
+then  
+   echo 'Enter the file'
+   read file
+   wc -lwm "$file" 
+   echo 'lines words characters'
+   
+   read -p 'Press a key to continue'
+   clear
+   ./OC.txt
+elif [ $opt = 3 ]
+then
+   echo 'Please enter words that you want a cow says'
+   read string
+   echo 'instal cowsay (need your password)'
+   sudo apt-get install cowsay
+   cowsay "$string"
+   read -p 'Press a key to continue'
+   clear
+   ./OC.txt	  	
+elif [ $opt = 4 ]
+then
+   ./myhelp.txt    
+    
+else
+   echo 'Please enter appropriate option'
+   ./OC.txt
+fi
+

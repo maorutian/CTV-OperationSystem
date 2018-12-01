@@ -1,0 +1,54 @@
+#The Text Processing Commands Sub-menu
+
+ echo 	'TEXT PROCESSING COMMANDS'
+ echo	'1 --Search a file for a pattern'
+ echo	'2 --Create a empty file with a specified name'
+ echo	'3 --Display the specified file'
+ echo	'4 -- Quit -- Return to Main Menu'
+
+read -p 'Enter your choice:' opt
+
+case "$opt" in
+                1) echo 'Use the following command to 
+search a file for a pattern: grep "word" <filename>'
+		echo ' Now Please  enter the pattern you are looking for'
+                read word
+
+		echo ' Please enter filename in which you are searching the pattern in '
+		read filename
+                grep -nr $word $filename
+		read -p 'Press enter to continue'
+		clear
+		./TPC.txt;;
+                2) echo 'Use the following command to create a file 
+with a specified name: touch <filename>'
+		echo ' Now Please  enter the name of file you want to create'
+		read filename
+                touch $filename
+                if [ -f $filename ]
+                then 
+                 	echo 'File' $filename 'is created'
+		fi
+                
+		read -p 'Press enter to continue'
+		clear
+		./TPC.txt;;
+                3) echo 'Use the following command to display 
+the specified file one page at a time: more <filename>'	
+                echo 'Now please enter the name of the file you want to display'
+	        read filename
+                more $filename
+		read -p 'Press enter to continue'
+                clear 
+		./TPC.txt;;
+                4) ./myhelp.txt;;
+ 		"")echo 'Please enter number'
+                 read -p 'Press enter to continue'
+		./TPC.txt;;               
+ 		*) echo "Invalid choice"
+                 read -p 'Press enter to re-enter'  
+                 clear
+                 ./TPC.txt 
+                 
+esac
+

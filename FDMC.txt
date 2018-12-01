@@ -1,0 +1,85 @@
+#!/bin/bash
+#The File Management Commands Sub-menu
+
+	echo 	"FILE AND DIRECTORY MANAGEMENT COMMANDS"
+	echo 	-e "\n"	
+	echo	"	1 --Display the contents of a file"
+	echo	"	2 --Remove a file"
+	echo	"	3 --Copy a file"
+	echo	"	4 --Move a file"
+	echo	"	5 --Display a file"
+	echo	"	6 --Quit -- Return to main Menu"
+	echo -e "\n"
+	echo -e "Enter your choice: \c"
+	read answer
+	case "$answer" in 
+		1)	echo -e "Please enter filename path: \c"
+			read filename
+			if [ -e $filename ]
+			then
+				less $filename
+				
+			else
+				echo "file is not exist"
+			fi
+			read -p 'Press enter to continue'
+			clear
+			./FDMC.txt;;
+		2) 	echo -e "Please enter filename: \c"
+			read filename
+			if [ -e $filename ]
+			then 
+				rm $filename
+				echo "File is removed successfully"
+			else
+				echo "file is not exist"
+			fi
+			read -p 'Press enter to continue'
+			clear
+			./FDMC.txt;;
+		3) 	echo -e "Please enter the source file name: \c"
+			read filesource
+			echo -e "Please enter the destination path: \c"
+			read filedest
+			if [ -e $filesource ]
+			then
+				cp $filesource $filedest
+				echo "File is copied successfuly"
+			else
+				echo "File source is not exist"
+			fi
+			read -p 'Press enter to continue'
+			clear
+			./FDMC.txt;;
+		4) 	echo -e "Please enter the original file name: \c"
+			read orgfile
+			echo -e "Please enter the new file name: \c"
+			read newfile
+			if [ -e $orgfile ]
+			then
+				mv $orgfile $newfile
+				echo "File is renamed successfully"
+			else
+				echo "Invalid original file"
+			fi
+			read -p 'Press enter to continue'
+			clear
+			./FDMC.txt;;
+		5) 	echo -e "please enter file name: \c"
+			read filename
+		 	if [ -e $filename ]
+			then
+				cat $filename
+			else
+			echo "File is not existed"
+			fi
+			read -p 'Press enter to continue'
+			clear
+			./FDMC.txt;;	
+		6) 	 clear
+			./myhelp.txt;;
+		*) 	echo "Invalide choice"
+			read -p 'Press enter to continue'
+			clear
+			./FDMC.txt
+	esac

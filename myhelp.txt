@@ -1,0 +1,24 @@
+#!/bin/bash
+function menu(){
+	echo "UNIX HELP MAIN MENU"
+	echo -e "\n"
+	echo "	1 -- File and Directory Management commands"
+	echo "	2 -- Text Processing commands"
+	echo " 	3 -- Other commands"
+	echo "	4 -- exit"
+	echo -e "\n"
+
+	echo -e "Enter your choice: \c" 
+	read answer
+	case "$answer" in
+		1) ./FDMC.txt;;
+		2) ./TPC.txt;;
+		3) ./OC.txt;;
+		4) exit 0;;
+		*) echo "Invalid option"
+		   read -p "Press enter to continue"
+		   clear
+		   ./myhelp.txt
+	esac
+}
+menu

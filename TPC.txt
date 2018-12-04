@@ -1,3 +1,4 @@
+#!/bin/bash
 #The Text Processing Commands Sub-menu
 #Below user will be displayed # of options
  echo 	'TEXT PROCESSING COMMANDS'
@@ -7,7 +8,7 @@
  echo	'4 -- Quit -- Return to Main Menu'
 
 #Below user will be prompted to enter relevant option
-read -p 'Enter your choice:' opt
+read -p 'Enter your choice from 1-4:' opt
 
 
 #Control of the option flow using case property
@@ -16,18 +17,18 @@ case "$opt" in
 # and help user implement the functions itself.
                 1) echo 'Use the following command to 
 search a file for a pattern: grep "word". <filename>'
-		echo ' Now Please  enter the pattern you are looking for:'
+		echo -e ' Now Please  enter the pattern you are looking for: \c'
                 read word
 
-		echo ' Please enter filename in which you are searching the pattern in: '
+		echo -e ' Please enter filename in which you are searching the pattern in: \c'
 		read filename
                 grep -nr $word $filename
-		read -p 'Press enter to continue'
+		read -p 'Press a key to continue...'
 		clear
 		./TPC.txt;;
                 2) echo 'Use the following command to create a file 
 with a specified name: touch <filename>'
-		echo ' Now Please  enter the name of file you want to create'
+		echo -e ' Now Please  enter the name of file you want to create \c'
 		read filename
                 touch $filename
                 if [ -f $filename ]
@@ -35,20 +36,20 @@ with a specified name: touch <filename>'
                  	echo 'File' $filename 'is created'
 		fi
                 
-		read -p 'Press enter to continue'
+		read -p 'Press a key to continue...'
 		clear
 		./TPC.txt;;
                 3) echo 'Use the following command to display 
 the specified file one page at a time: more <filename>'	
-                echo 'Now please enter the name of the file you want to display'
+                echo -e 'Now please enter the name of the file you want to display \c'
 	        read filename
                 more $filename
-		read -p 'Press enter to continue'
+		read -p 'Press a key to continue...'
                 clear 
 		./TPC.txt;;
                 4) ./myhelp.txt;;
- 		"")echo 'Please enter number'
-                 read -p 'Press enter to continue'
+ 		"")echo -e 'Please enter number \c'
+                 read -p 'Press a key to continue...'
 		./TPC.txt;;               
  		*) echo "Invalid choice"
                  read -p 'Press enter to re-enter'  

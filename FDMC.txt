@@ -22,31 +22,31 @@
 	echo -e "Enter your choice: \c"
 	read answer
 	case "$answer" in 
-		1)	echo -e "Please enter filename path: \c"
+		1)	echo -e "Please enter filename and filepath: \c"
 			read filename
 			if [ -e $filename ]
 			then
 				less $filename
 				
 			else
-				echo "file is not exist"
+				echo "file does not exist"
 			fi
-			read -p 'Press enter to continue'
+			read -p 'Press a key to continue...'
 			clear
 			./FDMC.txt;;
-		2) 	echo -e "Please enter filename: \c"
+		2) 	echo -e "Please enter filename and filepath: \c"
 			read filename
 			if [ -e $filename ]
 			then 
 				rm $filename
 				echo "File is removed successfully"
 			else
-				echo "file is not exist"
+				echo "file does not exist"
 			fi
-			read -p 'Press enter to continue'
+			read -p 'Press a key to continue...'
 			clear
 			./FDMC.txt;;
-		3) 	echo -e "Please enter the source file name: \c"
+		3) 	echo -e "Please enter the source filename: \c"
 			read filesource
 			echo -e "Please enter the destination path: \c"
 			read filedest
@@ -55,14 +55,14 @@
 				cp $filesource $filedest
 				echo "File is copied successfuly"
 			else
-				echo "File source is not exist"
+				echo "File source does not exist"
 			fi
-			read -p 'Press enter to continue'
+			read -p 'Press a key to continue...'
 			clear
 			./FDMC.txt;;
-		4) 	echo -e "Please enter the original file name: \c"
+		4) 	echo -e "Please enter the original filename: \c"
 			read orgfile
-			echo -e "Please enter the new file name: \c"
+			echo -e "Please enter the new filename: \c"
 			read newfile
 			if [ -e $orgfile ]
 			then
@@ -71,10 +71,10 @@
 			else
 				echo "Invalid original file"
 			fi
-			read -p 'Press enter to continue'
+			read -p 'Press a key to continue...'
 			clear
 			./FDMC.txt;;
-		5) 	echo -e "please enter file name: \c"
+		5) 	echo -e "please enter filename: \c"
 			read filename
 		 	if [ -e $filename ]
 			then
@@ -82,13 +82,13 @@
 			else
 			echo "File is not existed"
 			fi
-			read -p 'Press enter to continue'
+			read -p 'Press a key to continue...'
 			clear
 			./FDMC.txt;;	
 		6) 	 clear
 			./myhelp.txt;;
 		*) 	echo "Invalide choice"
-			read -p 'Press enter to continue'
+			read -p 'Press a key to continue...'
 			clear
 			./FDMC.txt
 	esac

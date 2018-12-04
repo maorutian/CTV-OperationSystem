@@ -1,49 +1,63 @@
-#Own Submenu
+#!/bin/bash
 
- echo 	'OTHER COMMANDS'
- echo	'1 --Display the current data and time'
- echo	'2 --Count lines, words, and characters in a specified file'
- echo	'3 --Draw a cow and let the cow say words that you want'
- echo	'4 -- Quit -- Return to Main Menu'
+#This is Own Submenu.
+#This menu includes 3 comments.
+#The first one is displaying  the current data and time.
+#The second one is counting lines, words, and characters in a specified file. Users can know lines, words, and characters in a file which they input.
+#The third one is create an ASCII cow in terminal that will say what ever users want.It is the last function of the menu. It helps users know that the unix terminal is not always dull and boring. It does some funny acts to entertain the user.
+
+#The contents of the boundary
+ echo   'OTHER COMMANDS'
+ echo   '1 --Display the current data and time'
+ echo   '2 --Count lines, words, and characters in a specified file'
+ echo   '3 --Create an ASCII cow  and let the cow say words that you want'
+ echo   '4 -- Quit -- Return to Main Menu'
 
 read -p 'Enter your choice:' opt
 
-if [ -z "$opt" ] 
-then 
-   echo 'Please enter number'
-   ./OC.txt
+#validate input
+if [ -z "$opt" ]
+then
+   echo -e 'Please enter number \c'
+   ./OC.txt 
+#The command to display the current data and time
 elif [ $opt = 1 ]
 then
    date '+%A %W %Y %X'
-   read -p 'Press a key to continue' 
-   clear
+   read -p 'Press a key to continue... '
+   clear #clear the terminal screen
    ./OC.txt
+#The command to count lines, words, and characters in a specified file
 elif [ $opt = 2 ]
-then  
-   echo 'Enter the file'
+then 
+   echo -e 'Enter the name of the file \c'
    read file
-   wc -lwm "$file" 
-   echo 'lines words characters'
-   
-   read -p 'Press a key to continue'
-   clear
+   echo 'lines words characters' 
+   wc -lwm "$file"
+   read -p 'Press a key to continue... '
+   clear #clear the terminal screen
    ./OC.txt
+#The command to create an ASCII cow 
 elif [ $opt = 3 ]
 then
-   echo 'Please enter words that you want a cow says'
+   echo -e 'Please enter words that you want a cow says \c'
    read string
    echo 'instal cowsay (need your password)'
-   sudo apt-get install cowsay
+   sudo apt-get install cowsay #instal cowsay
    cowsay "$string"
-   read -p 'Press a key to continue'
-   clear
-   ./OC.txt	  	
+   read -p 'Press a key to continue... ' 
+   clear #clear the terminal screen
+   ./OC.txt
+#The command to go back to main menu.           
 elif [ $opt = 4 ]
 then
-   ./myhelp.txt    
-    
+   ./myhelp.txt   
+#  validate input
 else
-   echo 'Please enter appropriate option'
+   echo -e 'Please enter appropriate option \c'
    ./OC.txt
 fi
+
+
+	
 

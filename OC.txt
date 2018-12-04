@@ -15,7 +15,7 @@
 
 read -p 'Enter your choice:' opt
 
-#validate input
+#validate null
 if [ -z "$opt" ]
 then
    echo -e 'Please enter number \c'
@@ -23,7 +23,7 @@ then
 #The command to display the current data and time
 elif [ $opt = 1 ]
 then
-   date '+%A %W %Y %X'
+   date '+%A %W %Y %X' #display date
    read -p 'Press a key to continue... '
    clear #clear the terminal screen
    ./OC.txt
@@ -33,7 +33,7 @@ then
    echo -e 'Enter the name of the file \c'
    read file
    echo 'lines words characters' 
-   wc -lwm "$file"
+   wc -lwm "$file" #words count
    read -p 'Press a key to continue... '
    clear #clear the terminal screen
    ./OC.txt

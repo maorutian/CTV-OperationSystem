@@ -1,20 +1,25 @@
 #The Text Processing Commands Sub-menu
-
+#Below user will be displayed # of options
  echo 	'TEXT PROCESSING COMMANDS'
  echo	'1 --Search a file for a pattern'
  echo	'2 --Create a empty file with a specified name'
  echo	'3 --Display the specified file'
  echo	'4 -- Quit -- Return to Main Menu'
 
+#Below user will be prompted to enter relevant option
 read -p 'Enter your choice:' opt
 
+
+#Control of the option flow using case property
 case "$opt" in
+#This part of the code both shows user how to use related commands
+# and help user implement the functions itself.
                 1) echo 'Use the following command to 
-search a file for a pattern: grep "word" <filename>'
-		echo ' Now Please  enter the pattern you are looking for'
+search a file for a pattern: grep "word". <filename>'
+		echo ' Now Please  enter the pattern you are looking for:'
                 read word
 
-		echo ' Please enter filename in which you are searching the pattern in '
+		echo ' Please enter filename in which you are searching the pattern in: '
 		read filename
                 grep -nr $word $filename
 		read -p 'Press enter to continue'

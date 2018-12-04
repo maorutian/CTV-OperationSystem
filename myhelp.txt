@@ -1,4 +1,11 @@
 #!/bin/bash
+# Unix help main menu, which has 4 options from 1 to 4 based on customer input
+# 1. FDMC.txt file will be run and sub-menu for File  and diretory mananagement commands will show
+# 2. TPC.txt file will be run and sub-menu for Text processing command will show
+# 3. OC.txt file will be run and sub-menu for other command will show
+# 4. To exit the Unix help menu
+# 5. If use input invalid option, "invalid message will show" user will retry with valid input.
+# 6. After each time the output screen will be clear and the menu will show again for easy to use.
 function menu(){
 	echo "UNIX HELP MAIN MENU"
 	echo -e "\n"

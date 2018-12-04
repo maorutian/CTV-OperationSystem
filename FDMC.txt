@@ -1,5 +1,14 @@
 #!/bin/bash
-#The File Management Commands Sub-menu
+# The File Management Commands Sub-menu
+# User has 6 options:
+# 1. Display the file by each screen by using less command. User need to input the path and name of the file.
+# 2. User input the path and name of the file to remove. Successful message will be shown after the file removed.
+# 3. User input the path and name of original file and destination. Successful message will be shown after the file copied.
+# 4. User input the path and name of original file and the new file. Successful  message will be shown after the file moved.
+# 5. Display all content of the file at once. User need to input the name and path of viewed file.
+# 6. Use press 6 to return to main menu
+# Invalid message will be show for invalid input then use will try again.
+# The output will be clear after each retry.
 
 	echo 	"FILE AND DIRECTORY MANAGEMENT COMMANDS"
 	echo 	-e "\n"	
